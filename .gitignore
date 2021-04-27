@@ -1,0 +1,9 @@
+/.mypy_cache
+/.vscode
+/001_CH_L_R.wav
+/environment
+/log_mel.npy
+/model.py
+/updated_model
+/weights
+/__pycache__
