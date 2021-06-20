@@ -66,5 +66,36 @@ python .\setup.py build_ext --inplace
 ```
 
 Ensure the python console is running everything in the folder where [setup](./setup.py) and [convolution](./convolution.pyx) are present.
-The final result should MOST LIKELY include a C file and a .pyd or .so file. To test if everything is correct we can run the [test](test.py) file
+The final result should MOST LIKELY include a C file and a .pyd or .so file. To test if everything is correct we can run the [test](./test.py) file.
+The correct result should follow the following format
+![Correct Result](./test_run.PNG)
 
+## Usage
+
+The resulting code can be used in any python file the following way
+
+```python
+import convolution
+
+# This function returns the result of the tensorflow model.predict function for the chosen layer
+# E.g convolution.predict(numpy.zeros(initialSize), layer=4) will print the prediction from the second convolution
+convolution.predict_layer(array, layer)
+
+# This functions prints the result from the tensorflow model.predict function for the chosen layers
+# E.g convolution.predict(numpy.zeros(initialSize), indices=[0,4]) will print the predictions from the two convolution layers
+# Same as running 
+#   convolution.predict(numpy.zeros(initialSize), layer=0) 
+#   convolution.predict(numpy.zeros(initialSize), layer=4)
+convolution.predict(array, indices=range(len(models)))
+
+#This function returns the average difference between two matrices
+#This is used to check the difference between layer output from our custom cnn and the tensorflow cnn
+convolution.differences(matrix1, matrix2)
+
+# This function is the same as model.predict function of the network using our custom Convolutional Neural Network
+convolution.predict_cnn(matrix)
+
+# This function runs the function predict_cnn for matrices of random values for the specified number of iterations and prints the average time it takes to run each layer.
+# This output is then saved in the output_file if it exists
+convolution.profile(iterations, output_file):
+```
