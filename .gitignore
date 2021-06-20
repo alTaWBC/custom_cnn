@@ -7,3 +7,4 @@ convolution.cp37-win_amd64.pyd
 requirements.txt
 results.txt
 /build
+/old
