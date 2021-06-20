@@ -95,7 +95,7 @@ convolution.differences(matrix1, matrix2)
 # This function is the same as model.predict function of the network using our custom Convolutional Neural Network
 convolution.predict_cnn(matrix)
 
-# This function runs the function predict_cnn for matrices of random values for the specified number of iterations and prints the average time it takes to run each layer.
+# This function runs the function predict_cnn for matrices of random values for the specified number of iterations and prints the average time (+ standart deviation) that takes to run each layer.
 # This output is then saved in the output_file if it exists
 convolution.profile(iterations, output_file):
 ```
