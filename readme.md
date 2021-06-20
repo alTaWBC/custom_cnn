@@ -40,17 +40,11 @@ FirstConvolutionBias = conv2d_1_biases
 
 3. MATRIX_SIZE
 
-This section relates to the sizes of the matrices of the convolutional neural network. The values can be obtained from the model.summary() command
-
-```
-FirstConvolution = conv2d_1_weights
-    -> path_to_project\\weights\\conv2d_1_weights
-FirstConvolutionBias = conv2d_1_biases
-    -> path_to_project\\weights\\conv2d_1_biases
-```
+This section relates to the sizes of the matrices of the convolutional neural network. The values can be obtained from the model.summary() command or from the utils file [see_matrix_sizes](utils\see_matrix_sizes.py)
 
 4. STRIDES
 
+This section relates to the strides of the convolution and pooling layers of the convolutional neural network. These values can be obtained from the utils file [see_strides](utils\see_strides.py)
 
 ### Example Final Configuration
 
