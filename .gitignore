@@ -8,3 +8,5 @@ requirements.txt
 results.txt
 /build
 /old
+weights/*
+model/*
